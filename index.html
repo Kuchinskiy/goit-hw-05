@@ -334,11 +334,13 @@
 			<div class="form-box">
 				<p class="subscribe-text">Subscribe</p>
 				<form class="form" name="report_form" autocomplete="off">
-					<input class="form-input" type="text" name="email_address" placeholder="E-mail">
+					<label for="email" aria-label="email_address">
+						<input class="form-input" type="email" name="email_address" id="email" placeholder="E-mail" required>
+					</label>
 					<button class="form-button" type="submit">Subscribe
-						<!-- <svg class="button-icon">
+						<svg class="button-icon" width="24" height="24" aria-hidden="true">
 							<use href="./images/icons.svg#icon-subscribe-footer"></use>
-						</svg> -->
+						</svg>
 					</button>
 				</form>
 			</div>

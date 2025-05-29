@@ -511,24 +511,20 @@ section-title <<-- for #3, #4 sections*/
 }
 
 .form-button {
+	gap: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
 	height: 40px;
 	min-width: 165px;
-
-	position: relative;
 
 	padding: 8px 24px;
 	box-shadow: none;
 }
 
-.form-button::after {
-	content: '';
-	position: absolute;
-	width: 24px;
-	height: 24px;
-	margin-left: 16px;
-	background-color: red;
-	background-size: cover;
-	/* background-image: url("../images/icons.svg#icon-subscribe-footer"); */
-	/* background-image: url("../images/Camila_sq.jpg"); */
+.button-icon {
+	display: inline-block;
+	fill: currentColor;
 }
 
