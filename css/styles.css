@@ -494,8 +494,10 @@ section-title <<-- for #3, #4 sections*/
 .form-input {
 	width: 264px;
 	height: 40px;
+
 	margin-right: 24px;
-	padding: 8px 0 8px 16px;
+	padding: 8px 16px;
+
 	border-radius: 4px;
 	border: 1px solid #ffffff;
 	background-color: transparent;
@@ -597,4 +599,42 @@ section-title <<-- for #3, #4 sections*/
 	letter-spacing: 0.02em;
 
 	margin-bottom: 16px;
+}
+
+.form-modal {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.form-label {
+	font-size: 12px;
+	color: #8e8f99;
+	line-height: 1.17;
+	letter-spacing: 0.04em;
+
+	margin-bottom: 4px;
+}
+
+.input-wrapper {
+	position: relative;
+	margin-bottom: 8px;
+}
+
+.form-input-modal {
+	width: 360px;
+	height: 40px;
+
+	padding: 8px 16px;
+	cursor: pointer;
+
+	border-radius: 4px;
+	border: 1px solid rgba(46, 47, 66, 0.4);
+}
+
+.form-icon {
+	position: absolute;
+	top: 54%;
+	left: 17px;
+	transform: translateY(-54%);
 }
