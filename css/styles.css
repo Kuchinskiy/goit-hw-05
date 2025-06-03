@@ -139,6 +139,10 @@ input[type="radio"].visually-hidden {
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.nav-link.current {
+	color: #404bbf;
+}
+
 .nav-link::after {
 	content: "";
 	background-color: #404bbf;
@@ -173,11 +177,11 @@ input[type="radio"].visually-hidden {
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.nav-link.current::after,
 .nav-list .nav-link:hover::after,
 .nav-list .nav-link:focus::after,
-.contact-list .contact-link:hover,
-.contact-list .contact-link:focus,
-.nav-link.current::after {
+.nav-list .nav-link:is(:focus, :hover),
+.contact-list .contact-link:is(:focus, :hover) {
 	opacity: 1;
 	color: #404bbf;
 }
@@ -351,8 +355,7 @@ section-title <<-- for #3, #4 sections*/
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-list .social-link:hover,
-.social-list .social-link:focus {
+.social-list .social-link:is(:focus, :hover) {
 	background-color: #404bbf;
 }
 
@@ -386,8 +389,7 @@ section-title <<-- for #3, #4 sections*/
 	margin-bottom: 0;
 }
 
-.items .gallery-item:hover,
-.items .gallery-item:focus {
+.items .gallery-item:is(:focus, :hover) {
 	box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
 	0px 1px 1px rgba(46, 47, 66, 0.16),
 	0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -482,8 +484,7 @@ section-title <<-- for #3, #4 sections*/
 	gap: 16px;
 }
 
-.footer .social-link:hover,
-.footer .social-link:focus {
+.footer .social-link:is(:focus, :hover) {
 	background-color:  #31d0aa;
 }
 
@@ -546,22 +547,22 @@ section-title <<-- for #3, #4 sections*/
 	z-index: 999;
 	background-color: rgb(46, 47, 66, 0.4);
 
-	/* opacity: 1; */
-	/* pointer-events: none; */
+	opacity: 0;
+	pointer-events: none;
 
 	transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* .modal-overlay.is-open {
+/* Add / Delete --> class "is-open" on backdrop */
+.modal-overlay.is-open {
 	opacity: 1;
 	pointer-events: auto;
-} */
+}
 
 .modal {
 	display: flex;
+	min-width: 408px;
 	flex-direction: column;
-	max-width: 408px;
-	max-height: 584px;
 
 	padding: 24px;
 
@@ -590,6 +591,14 @@ section-title <<-- for #3, #4 sections*/
 	border-radius: 50%;
 	background-color: #e7e9fc;
 	border: 1px solid rgba(0, 0, 0, 0.1);
+
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+	background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-btn-close:is(:focus, :hover) {
+	fill: #ffffff;
+	background-color: #404bbf;
 }
 
 .modal-title {
@@ -630,10 +639,10 @@ section-title <<-- for #3, #4 sections*/
 	padding: 8px 36px;
 	cursor: pointer;
 	outline: none;
-	border: none;
 
 	border-radius: 4px;
 	border: 1px solid rgba(46, 47, 66, 0.4);
+	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input-modal:is(:focus, :hover) + .form-icon {
@@ -657,6 +666,7 @@ section-title <<-- for #3, #4 sections*/
 	top: 54%;
 	left: 17px;
 	transform: translateY(-54%);
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .textarea-wrapper {
@@ -668,8 +678,14 @@ section-title <<-- for #3, #4 sections*/
 .form-textarea {
 	resize: none;
 	cursor: pointer;
+	outline: none;
 	border-radius: 4px;
 	border: 1px solid rgba(46, 47, 66, 0.4);
+	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-textarea:focus-within {
+	border-color:#4d5ae5;
 }
 
 .form-textarea::placeholder {
@@ -703,7 +719,7 @@ section-title <<-- for #3, #4 sections*/
 	justify-content: center;
 
 	fill: transparent;
-	/* margin-right: 8px; */
+	margin-right: 8px;
 }
 
 .form-checkbox:checked + .form-label > .custom-checkbox {

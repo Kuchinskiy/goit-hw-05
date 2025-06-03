@@ -10,6 +10,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css" integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 	<link rel="stylesheet" href="./css/styles.css">
 	<title>GOIT-HW-05</title>
+
+	<script src="./js/modal.js" defer></script>
 </head>
 
 <body>
@@ -39,7 +41,7 @@
 		<section class="section-hero">
 			<div class="container">
 					<h1 class="hero-title">Effective Solutions <br> for Your Business</h1>
-					<button class="button" type="button">Order Service</button>
+					<button class="button" type="button" data-modal-open>Order Service</button>
 			</div>
 		</section>
 
@@ -348,9 +350,9 @@
 	</footer>
 
 	<!-- Modal window -->
-	<div class="modal-overlay">
+	<div class="modal-overlay" data-modal>
 		<div class="modal">
-			<button class="modal-btn-close">
+			<button class="modal-btn-close" type="button" data-modal-close>
 				<svg class="icon-close" width="8" height="8" aria-hidden="true">
 					<use href="./images/icons.svg#icon-close-modal"></use>
 				</svg>
@@ -398,11 +400,10 @@
 							<a href="#" class="form-link">Privacy Policy</a>
 						</label>
 					</div>
-
 					<button class="modal-btn-send" type="submit">Send</button>
 				</form>
-		</di>
-	 </div>
+		</div>
+	</div>
 </body>
 </html>
 
