@@ -4,6 +4,7 @@
 :root {
 	--icon-social-text-color: #f4f4fd;
 	--color-label-checkbox: #8e8f99;
+	--checked-input-span: #404bbf;
 }
 
 body {
@@ -489,13 +490,13 @@ section-title <<-- for #3, #4 sections*/
 	background-color:  #31d0aa;
 }
 
-.form {
+.footer .form {
 	gap: 24px;
 	display: flex;
 	max-width: 453px;
 }
 
-.form-input {
+.footer .form-input {
 	color: #ffffff;
 	width: 264px;
 	height: 40px;
@@ -512,11 +513,11 @@ section-title <<-- for #3, #4 sections*/
 	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
-.form-input::placeholder {
+.footer .form-input::placeholder {
 	color: #ffffff;
 }
 
-.form-button {
+.footer .form-button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -528,7 +529,7 @@ section-title <<-- for #3, #4 sections*/
 	box-shadow: none;
 }
 
-.button-icon {
+.footer .button-icon {
 	fill: currentColor;
 	display: inline-block;
 	margin-left: 16px;
@@ -549,8 +550,8 @@ section-title <<-- for #3, #4 sections*/
 	z-index: 999;
 	background-color: rgb(46, 47, 66, 0.4);
 
-	opacity: 1;
-	/* pointer-events: none; */
+	opacity: 0;
+	pointer-events: none;
 
 	transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
 	visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -563,10 +564,8 @@ section-title <<-- for #3, #4 sections*/
 }
 
 .modal {
-	/* display: flex; */
 	width: 408px;
 	min-height: 584px;
-	/* flex-direction: column; */
 
 	position: absolute;
 	top: 50%;
@@ -693,8 +692,6 @@ section-title <<-- for #3, #4 sections*/
 }
 
 .textarea-wrapper {
-	/* display: flex;
-	flex-direction: column; */
 	margin-bottom: 16px;
 }
 
@@ -753,7 +750,7 @@ section-title <<-- for #3, #4 sections*/
 	justify-content: center;
 
 	fill: transparent;
-	/* margin-right: 8px; */
+	margin-right: 8px;
 
 	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
 	border 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -761,9 +758,9 @@ section-title <<-- for #3, #4 sections*/
 }
 
 .form-checkbox:checked + .form-label > .custom-checkbox {
-	fill: #ffffff;
+	fill: var(--icon-social-text-color);
 	border: none;
-	background-color: #404bbf;
+	background-color: var(--checked-input-span);
 }
 
 .form-link {
